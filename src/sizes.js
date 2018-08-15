@@ -22,9 +22,9 @@ export default [
       '480x320',
       '580x400',
       '750x100',
-      '750x200',
-      '750x300',
-      '930x180',
+      // '750x200', not used but available
+      // '750x300', not used but available
+      // '930x180', not used but available
       '950x90',
       '960x90',
       '970x66',
