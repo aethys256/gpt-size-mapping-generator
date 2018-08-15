@@ -34,6 +34,12 @@ export default [
     computeBreakpointWidth: (width) => width + 8 * 2,
     computeBreakpointHeight: (height) => height,
     customFilter: (breakpointWidth, breakpointHeight, validAds) => {
+      if (breakpointWidth >= 216 && breakpointHeight < 200) {
+        return []
+      }
+      if (breakpointWidth >= 600 && breakpointHeight < 100) {
+        return []
+      }
       if (breakpointWidth >= 600) {
         const filteredAds = validAds.filter(([width, height]) => {
           return height <= 120
@@ -64,6 +70,9 @@ export default [
     computeBreakpointWidth: (width) => width * 2 + 1280 + 8 * 4,
     computeBreakpointHeight: (height) => height + 8 * 2,
     customFilter: (breakpointWidth, breakpointHeight, validAds) => {
+      if (breakpointHeight < 600) {
+        return []
+      }
       return validAds.sort((a, b) => b[0] * b[1] - a[0] * a[1])
     }
   }

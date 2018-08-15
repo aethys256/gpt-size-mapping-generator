@@ -77,6 +77,8 @@ for (const sizeToMap of sizesToMap) {
       // Apply custom filter
       const finalAds = customFilter(widthBreakpointValue, heightBreakpointValue, validAds)
 
+      if (finalAds.length === 0) continue
+
       // Write the sizeMap format
       const sizeMap = `.addSize([${widthBreakpointValue},${heightBreakpointValue}],[[${finalAds.join('],[')}]])`
       sizeMapping += `${sizeMap.replace(/,/g, ', ')}\n`
